@@ -1,0 +1,70 @@
+<form #userForm="ngForm">
+
+  <h1 class="title"> Create User </h1>
+
+    <div class="field full">
+    <label for="name">User name</label>
+    <input id="name" type = "text"  name="name" [(ngModel)]="name" required #nameControl = "ngModel"/>
+    @if (nameControl.errors && nameControl.touched){
+      @if(nameControl.errors['required']){
+        <span class="error">The user name is required</span>
+      }
+    }
+  </div>
+
+  <div class="field full" >
+    <label for="email">User Email</label>
+    <textarea id="email" name="email" [(ngModel)]="email" required maxlength="1000" #emailControl="ngModel"></textarea>
+    @if(emailControl.errors && emailControl.touched){
+      @if(emailControl.errors['required']){
+        <span class="error">The user emailControl is required</span>
+      }
+    }
+  </div>
+
+    <div class="field">
+    <label for="size">Gender </label>
+    <select id="size" name="gender" [(ngModel)]="gender">
+      <option value="FEMALE">FEMALE</option>
+      <option value="MALE">MALE</option>
+
+    </select>
+  </div>
+
+    <div class="buttons">
+    <button id="create" type="button" class="submit-button" (click)="addUser(userForm)">Submit</button>
+    <button id="cancel" type="button" class="cancel-button" (click)="resetForm(userForm)">Cancel</button>
+  </div>
+
+  @if (createMessage()) {
+    <p class="message" [class.success]="createSuccess()" [class.failure]="!createSuccess()">{{ createMessage() }}</p>
+  }
+</form>
+
+<hr />
+
+<div class="search">
+  <h1 class="title">Find User</h1>
+
+  <div class="field full">
+    <label for="searchName">User name</label>
+    <input id="searchName" type="text" name="searchName" [(ngModel)]="searchName" #searchNameControl="ngModel" />
+  </div>
+
+  <div class="buttons">
+    <button id="search" type="button" class="submit-button" (click)="searchUser()">Search</button>
+  </div>
+
+  @if (foundUser(); as user) {
+    <div class="result">
+      <h2 class="result-title">User found</h2>
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Gender:</strong> {{ user.gender }}</p>
+    </div>
+  }
+
+  @if (searchError()) {
+    <span class="error">{{ searchError() }}</span>
+  }
+</div>

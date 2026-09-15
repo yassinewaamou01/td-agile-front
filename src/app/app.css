@@ -1,0 +1,180 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 40px 16px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #f4f6fb 0%, #e9edf5 100%);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2430;
+}
+
+form,
+.search {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  padding: 28px 32px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(31, 36, 48, 0.08);
+}
+
+.title {
+  margin: 0 0 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2430;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.field.full {
+  width: 100%;
+}
+
+label {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #55607a;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+input,
+textarea,
+select {
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1f2430;
+  background: #f7f8fb;
+  border: 1px solid #d7dbe6;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4f6ef2;
+  box-shadow: 0 0 0 3px rgba(79, 110, 242, 0.15);
+  background: #ffffff;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: #e4534b;
+}
+
+.error {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #e4534b;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+button {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.submit-button {
+  background: #4f6ef2;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 110, 242, 0.3);
+}
+
+.submit-button:hover {
+  background: #3e5be0;
+}
+
+.cancel-button {
+  background: #f0f1f5;
+  color: #55607a;
+}
+
+.cancel-button:hover {
+  background: #e3e5ec;
+}
+
+hr {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  border: none;
+  border-top: 1px solid #d7dbe6;
+}
+
+.message {
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.message.success {
+  color: #1c7c4d;
+  background: #e6f7ee;
+  border: 1px solid #b7ebd0;
+}
+
+.message.failure {
+  color: #b8362f;
+  background: #fdecea;
+  border: 1px solid #f6c6c2;
+}
+
+.result {
+  padding: 14px 16px;
+  margin-top: 4px;
+  background: #f4f7ff;
+  border: 1px solid #dbe4ff;
+  border-radius: 10px;
+}
+
+.result-title {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4f6ef2;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.search p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.search p strong {
+  display: inline-block;
+  width: 70px;
+  color: #55607a;
+}
